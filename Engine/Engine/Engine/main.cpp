@@ -13,7 +13,7 @@ int main(int argc, char* args[]) {
 	//}
 
 	Engine::GetInstance()->SetGameInterface(new Game());
-	Engine::GetInstance()->Initialize("GAME 301 Engine", 800, 600);
+	Engine::GetInstance()->Initialize("WaterTurtle Engine", 1600, 900);
 	Engine::GetInstance()->Run();
 
 

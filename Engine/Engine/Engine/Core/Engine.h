@@ -1,6 +1,11 @@
 #ifndef ENGINE_H
 #define ENGINE_H
 
+#define KEY_W 119
+#define KEY_S 115
+#define KEY_A 97
+#define KEY_D 100
+
 #include "Window.h"
 #include "Timer.h"
 #include "Debug.h"
@@ -14,6 +19,7 @@
 #include "../Rendering/3D/GameObject.h"
 #include "../Events/EventListener.h"
 #include "../Rendering/SceneGraph.h"
+#include "../Events/KeyboardInputManager.h"
 
 
 #include <memory>

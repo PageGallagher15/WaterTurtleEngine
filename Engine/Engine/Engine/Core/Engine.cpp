@@ -56,6 +56,9 @@ bool Engine::Initialize(std::string name_, int width_, int height_) {
 }
 void Engine::Run() {
 	while (isRunning) {
+
+		KeyboardInputManager::GetInstance()->Update();
+		KeyboardInputManager::GetInstance()->UpdatePrevious();
 		EventListener::Update();
 		timer.UpdateFrameTicks();
 		Update(timer.GetDeltaTime());
@@ -120,11 +123,11 @@ void Engine::NotifyOfMouseReleased(int x_, int y_, int buttonType_){
 }
 
 void Engine::NotifyOfMouseMove(int x_, int y_){
-	Camera::GetInstance()->ProcessMouseMovement(MouseEventListener::GetMouseOffset().x, MouseEventListener::GetMouseOffset().y);
+	//Camera::GetInstance()->ProcessMouseMovement(MouseEventListener::GetMouseOffset().x, MouseEventListener::GetMouseOffset().y);
 }
 
 void Engine::NotifyOfMouseScroll(int y_){
-	Camera::GetInstance()->ProcessMouseZoom(y_);
+	//Camera::GetInstance()->ProcessMouseZoom(y_);
 }
 
 void Engine::ExitGame(){
