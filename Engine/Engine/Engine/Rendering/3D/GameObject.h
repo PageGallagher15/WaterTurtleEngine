@@ -27,6 +27,8 @@ public:
 	BoundingBox GetBoundingBox() const;
 	std::string GetTag() const;
 
+	Model* GetModel() const;
+
 
 private: 
 	glm::vec3 position;

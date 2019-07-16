@@ -103,3 +103,8 @@ std::string GameObject::GetTag() const
 {
 	return tag;
 }
+
+Model* GameObject::GetModel() const
+{
+	return model;
+}

@@ -18,6 +18,7 @@ public:
 	glm::mat4 GetTransform(GLuint index_) const;
 	BoundingBox GetBoundingBox();
 	GLuint GetShader();
+	Mesh* GetMesh(GLuint shaderProg_);
 
 private:
 	glm::mat4 GetTransform(glm::vec3 position_, float angle_, glm::vec3 rotation_, glm::vec3 scale_) const;

@@ -8,6 +8,7 @@
 #include "../../Camera/Camera.h"
 #include "../../Core/Debug.h"
 #include "../../Graphics/MaterialHandler.h"
+#include "../../Graphics/ShaderHandler.h"
 
 struct Vertex {
 	glm::vec3 position;
@@ -28,6 +29,7 @@ public:
 	Mesh(SubMesh subMesh_, GLuint shaderProgram_);
 	~Mesh();
 	void Render(Camera* camera_, std::vector<glm::mat4> instances_);
+	float transparency = 0.5f;
 
 private:
 	GLuint VAO, VBO;

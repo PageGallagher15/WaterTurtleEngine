@@ -84,3 +84,8 @@ glm::mat4 Model::GetTransform(glm::vec3 position_, float angle_, glm::vec3 rotat
 
 	return model;
 }
+
+Mesh* Model::GetMesh(GLuint shaderProg_)
+{
+	return subMeshes.at(shaderProg_);
+}
