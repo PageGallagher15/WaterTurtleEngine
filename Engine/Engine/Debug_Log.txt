@@ -1,1 +1,1 @@
-[INFO] in d:\waterturtleengine\engine\engine\engine\core\engine.cpp on line: 41
+[INFO] in d:\coding\c++\waterturtleengine\engine\engine\engine\core\engine.cpp on line: 41[ERROR] in d:\coding\c++\waterturtleengine\engine\engine\engine\fx\materialloader.cpp on line: 7[ERROR] in d:\coding\c++\waterturtleengine\engine\engine\engine\rendering\3d\loadobjmodel.cpp on line: 35

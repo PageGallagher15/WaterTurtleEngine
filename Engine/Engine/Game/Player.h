@@ -7,6 +7,7 @@
 #include "Entity.h"
 
 
+
 class Player : public Entity
 {
 public:
@@ -18,10 +19,18 @@ public:
 
 	void Movement(float deltaTime_);
 
+	bool canRight;
+	bool canLeft;
+
 private: 
+
 	float speed = 2.0f;
 	float gravityS = 2.5f;
 	Model* particle;
+	bool isDead;
+	bool isFacingRight = true;
+	bool turningRight = false;
+	bool turningLeft = false;
 };
 
 #endif

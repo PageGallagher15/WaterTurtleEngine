@@ -2,8 +2,14 @@
 
 
 
-GameObject::GameObject(Model* model_) : position(glm::vec3()), angle(0.0f), rotation(glm::vec3(0.0f, 1.0f, 0.0f)), scale(glm::vec3(1.0f)), tag(""), hit(false){
+GameObject::GameObject(Model* model_){
+	position = glm::vec3(0.0f);
+	rotation = glm::vec3(0.0f, 1.0f, 0.0f);
+	scale = glm::vec3(1.0f);
+	hit = false;
+
 	model = model_;
+	tag = "";
 	if (model) {
 		modelInstance = model->CreateInstance(position, angle, rotation, scale);
 		boundingBox = model->GetBoundingBox();
@@ -11,9 +17,15 @@ GameObject::GameObject(Model* model_) : position(glm::vec3()), angle(0.0f), rota
 	}
 }
 
-GameObject::GameObject(Model* model_, glm::vec3 position_) : position(glm::vec3()), angle(0.0f), rotation(glm::vec3(0.0f, 1.0f, 0.0f)), scale(glm::vec3(1.0f)), tag(""), hit(false) {
+GameObject::GameObject(Model* model_, glm::vec3 position_){
+	position = glm::vec3(0.0f);
+	rotation = glm::vec3(0.0f, 1.0f, 0.0f);
+	scale = glm::vec3(1.0f);
+	hit = false;
+	
 	model = model_;
 	position = position_;
+	tag = "";
 	if (model) {
 		modelInstance = model->CreateInstance(position, angle, rotation, scale);
 		boundingBox = model->GetBoundingBox();
@@ -30,7 +42,7 @@ GameObject::~GameObject(){
 }
 
 void GameObject::Update(const float deltaTime_){
-	SetAngle(angle + 0.005f);
+	//SetAngle(angle + 0.005f);
 }
 
 void GameObject::SetPostition(glm::vec3 position_) {

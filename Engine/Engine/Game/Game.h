@@ -1,10 +1,11 @@
 #ifndef GAME_H
 #define GAME_H
 
-#define BASE_SHADER Shader::GetInstance()->GetShader("baseShader")
+#define BASE_SHADER ShaderHandler::GetInstance()->GetShader("baseShader")
 
 #include "../Engine/Core/Engine.h"
 #include "../Engine/Graphics/ShaderHandler.h"
+#include "../Game/Player.h"
 #include <glm/gtx/string_cast.hpp>
 
 class Game : public GameInterface{
@@ -18,7 +19,7 @@ public:
 	virtual void Render();
 
 private: 
-	
+	Player* player;
 };
 
 #endif

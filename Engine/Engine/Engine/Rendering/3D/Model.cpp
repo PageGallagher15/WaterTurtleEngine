@@ -2,11 +2,17 @@
 
 
 
-Model::Model(const std::string& objPath_, const std::string& matPath_, GLuint shaderProgram_) : subMeshes(std::vector<Mesh*>()), modelInstances(std::vector<glm::mat4>()){
+Model::Model(const std::string& objPath_, const std::string& matPath_, GLuint shaderProgram_){
 	
+	std::string modelPath = "Resources/Models/" + objPath_;
+	std::string matPath = "Resources/Materials/" + matPath_;
+
+	subMeshes = (std::vector<Mesh*>());
+	modelInstances = (std::vector<glm::mat4>());
+
 	shaderProgram = shaderProgram_;
 	obj = new LoadOBJModel();
-	obj->LoadModel(objPath_, matPath_);
+	obj->LoadModel(modelPath, matPath);
 	this->LoadModel();
 	
 }
@@ -24,11 +30,12 @@ Model::~Model() {
 		subMeshes.shrink_to_fit(); 
 	}
 
-	modelInstances.clear(); 
-	modelInstances.shrink_to_fit();
+	/*modelInstances.clear(); 
+	modelInstances.shrink_to_fit();*/
 }
 
 void Model::Render(Camera* camera_) {
+	glUseProgram(shaderProgram);
 	for (auto m : subMeshes) {
 		m->Render(camera_, modelInstances);
 	}

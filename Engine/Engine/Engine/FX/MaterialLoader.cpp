@@ -20,7 +20,7 @@ void MaterialLoader::LoadMaterial(std::string file_){
 			m.diffuseMap = LoadTexture(matName);
 		}
 		//NS - Shininess
-		if (line.substr(0, 4) == "\tNs ") {
+		if (line.substr(0, 4) == "Ns ") {
 			std::istringstream ns(line.substr(4));
 			double x;
 			ns >> x;
@@ -28,28 +28,28 @@ void MaterialLoader::LoadMaterial(std::string file_){
 		}
 
 		//D - Transparency
-		if (line.substr(0, 3) == "\td ") {
+		if (line.substr(0, 3) == "d ") {
 			std::istringstream d(line.substr(3));
 			double x;
 			d >> x;
 			m.transparency = x;
 		}
 		//KA - Ambient
-		if (line.substr(0, 4) == "\tKa ") {
+		if (line.substr(0, 4) == "Ka ") {
 			std::istringstream ka(line.substr(4));
 			double x, y, z;
 			ka >> x >> y >> z;
 			m.ambient = glm::vec3(x, y, z);
 		}
 		//KD = Diffuse
-		if (line.substr(0, 4) == "\tKd ") {
+		if (line.substr(0, 4) == "Kd ") {
 			std::istringstream kd(line.substr(4));
 			double x, y, z;
 			kd >> x >> y >> z;
 			m.diffuse = glm::vec3(x, y, z);
 		}
 		//KS - Specular
-		if (line.substr(0, 4) == "\tKs ") {
+		if (line.substr(0, 4) == "Ks ") {
 			std::istringstream ks(line.substr(4));
 			double x, y, z;
 			ks >> x >> y >> z;

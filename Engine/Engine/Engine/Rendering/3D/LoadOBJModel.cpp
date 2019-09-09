@@ -2,8 +2,8 @@
 
 
 
-LoadOBJModel::LoadOBJModel(): currentMaterial(Material()){
-
+LoadOBJModel::LoadOBJModel(){
+	currentMaterial = Material();
 }
 
 
